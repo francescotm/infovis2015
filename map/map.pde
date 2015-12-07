@@ -16,13 +16,14 @@ void setup() {
 }
 
 void draw() {
-  background(33,37,44);
+  background(33,37,44); // blackish
   for (int i = 2; i < cities.length; i++) {
     if (cities[i].population > minPopulationToDisplay) {
       cities[i].draw();
       noLoop();
     }
   }
+  // legend
   fill(255,255,255);
   text("Displaying cities with a population above " + minPopulationToDisplay, 10, 20);
 }
@@ -60,17 +61,15 @@ void parseInfo(String line) {
 // keyboard interaction 
 // reference: https://processing.org/reference/keyCode.html
 void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {
-      if (minPopulationToDisplay < (int)maxPopulation) {
-        minPopulationToDisplay = minPopulationToDisplay * 5;
-        println("pressing up");
+  if (key == CODED) { // if press key
+    if (keyCode == UP) { // if key is arrow up
+      if (minPopulationToDisplay < (int)maxPopulation) { 
+        minPopulationToDisplay = minPopulationToDisplay * 5; // increase min population to display
         redraw();
       }
     } else if (keyCode == DOWN) {
-      if (minPopulationToDisplay > 16) {
-        minPopulationToDisplay = minPopulationToDisplay / 5;
-        println("pressing down");
+      if (minPopulationToDisplay > 16) {  
+        minPopulationToDisplay = minPopulationToDisplay / 5; // decrease min population to display
         redraw();
       }
     } 
@@ -82,13 +81,12 @@ void keyPressed() {
 // get place under point
 Place pick(int px, int py) {
   pickedPlace = null;
-  for (int i = cities.length - 1; i > 1; i--) {
+  for (int i = cities.length - 1; i > 1; i--) { // loop through cities in reverse order
    if (cities[i].contains(px,py) && cities[i].population > minPopulationToDisplay) {
       pickedPlace = cities[i];
-      cities[i].highlight();
+      cities[i].highlight(); // highlight picked place
     } else {
-      // do nothing, place still null
-      cities[i].noHighlight();
+      cities[i].noHighlight(); // remove highlight from other places
    }
   }
   return pickedPlace;
@@ -100,10 +98,9 @@ Place click(int px, int py) {
   for (int i = cities.length - 1; i > 1; i--) {
    if (cities[i].contains(px,py) && cities[i].population > minPopulationToDisplay) {
       pickedPlace = cities[i];
-      cities[i].select();
+      cities[i].select(); // select picked place
     } else {
-      // do nothing, place still null
-      cities[i].noSelect();
+      cities[i].noSelect(); // remove selection from other places
    }
   }
   return pickedPlace;
