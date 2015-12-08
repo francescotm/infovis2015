@@ -57,10 +57,10 @@ class Place {
   
   // mapping position
   float mapX(float x){
-    return map(x, minX, maxX, 0, 800);
+    return map(x, minX, maxX, 50, 800);
   }
   float mapY(float y){
-    return map(y, minY, maxY, 900, 0);
+    return map(y, minY, maxY, 800, 50);
   }
   
   // mapping density

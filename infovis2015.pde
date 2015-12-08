@@ -11,7 +11,7 @@ int minPopulationToDisplay = 400;
 Place pickedPlace;
 
 void setup() {
-  size(800, 800);
+  size(900, 800);
   readData();
 }
 
