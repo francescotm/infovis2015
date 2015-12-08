@@ -25,7 +25,7 @@ The map displays the cities of France as dots. Their relative size and density i
 
 Then, I multiplied the density to the surface of the city, to give a proportional representation of the cities on the map (otherwise, a small but very dense town would appear to be as big as Paris, for example).
 
-This number (density * surface) is divided by 2 and by a decimal factor, to calculate the radius of each ellipse.
+This number (density * surface) is divided by 2 and multiplied by a decimal factor, to calculate the radius of each ellipse.
 
 The radius is then used to check when the mouse is hovering or picking a specific city.
 
