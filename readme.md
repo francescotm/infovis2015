@@ -16,7 +16,7 @@ The application displays a map of French cities. To use it, open the file `infov
 ### How to see the name of a city
 
 * Hover with the mouse on the circle representing a city to see its name.
-* Click on the circle to select it. The name of the city will change color.
+* Click on the circle to select it. The name of the city and the circle will change color.
 
 ## Data encoding
 The map displays the cities of France as dots. Their relative size and density is represented as an ellipse of varying size. To calculate the size of the ellipse, I first calculated the density of a city:
